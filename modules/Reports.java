@@ -128,7 +128,7 @@ public class Reports {
     public void showSellerWithMostSales(String sellerName, String lastName, int totalSales) {
         if (sellerName != null) {
             System.out.printf("\n3. SELLER WITH THE MOST SALES: %s %s, WITH %d SALES", sellerName, lastName, totalSales);
-        } else System.out.println(" THERE IS NO SELLER WITH MORE SALES");
+        } else System.out.println("\n3. THERE IS NO SELLER WITH MORE SALES");
     }
 
     public void showMostSoldProduct(String productDetail, int totalSold) {
@@ -137,7 +137,7 @@ public class Reports {
     }
 
     public void showSellerSummaryTitle() {
-        System.out.println("5. SALES SUMMARY BY SELLER :");
+        System.out.println("5. SALES SUMMARY BY SELLER:");
     }
 
     public void runReportViewLoop() {
@@ -164,6 +164,6 @@ public class Reports {
     }
 
     public void showErrorMessage() {
-        System.out.println("THERE IS NO DATA TO SHOW REPORT\n");
+        System.out.println("***THERE IS NO DATA TO SHOW REPORT***\n");
     }
 }

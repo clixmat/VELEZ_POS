@@ -26,10 +26,6 @@ public class Users {
         this.role = role;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public static LinkedList<Users> getUsers() {
         LinkedList<Users> sortedUsers = new LinkedList<>(users);
         for (int i = 0; i < sortedUsers.size() - 1; i++) {
@@ -48,20 +44,26 @@ public class Users {
         return name;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
     public int getDocumentNumber() {
         return documentNumber;
     }
 
     private int validateDocumentNumber() {
-        int documentNumber;
-        do {
-            System.out.print("ENTER DOCUMENT NUMBER (8 digits): ");
-            while (!scanner.hasNextInt()) {
-                System.out.println("THAT'S NOT A VALID NUMBER");
-                scanner.next();
-            }
-            documentNumber = scanner.nextInt();
-        } while (String.valueOf(documentNumber).length() != 8);
+        System.out.print("ENTER DOCUMENT NUMBER (8 digits): ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("THAT'S NOT A VALID NUMBER");
+            scanner.next();
+            return validateDocumentNumber();
+        }
+        int documentNumber = scanner.nextInt();
+        if (String.valueOf(documentNumber).length() != 8) {
+            System.out.println("DOCUMENT NUMBER MUST BE 8 DIGITS");
+            return validateDocumentNumber();
+        }
         return documentNumber;
     }
 
@@ -107,7 +109,7 @@ public class Users {
 
     private void handleListAllUsers() {
         if (getUsers().isEmpty()) {
-            System.out.println("NO USERS FOUND :( \n");
+            System.out.println("NO USERS FOUND \n");
             System.out.println("PLEASE CREATE NEW USERS TO DISPLAY THIS LIST");
         } else {
             System.out.println("ACTIVE USERS: \n");

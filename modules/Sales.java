@@ -115,7 +115,6 @@ public class Sales {
             System.out.println("SELLER NOT FOUND. PLEASE CREATE THE SELLER FIRST.");
             return;
         }
-        System.out.println("AVAILABLE PRODUCTS: ");
         product.handleListAllProducts();
 
 
@@ -165,7 +164,7 @@ public class Sales {
     }
 
     public static void printTableHeader() {
-        System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s\n",
+        System.out.printf("%-20s %-15s %-15s %-15s %-15s %-15s\n",
                 "PRODUCT",
                 "QUANTITY",
                 "SUB-TOTAL",

@@ -45,15 +45,17 @@ public class Products {
     }
 
     public double validateSellPrice() {
-        double sellPrice;
-        do {
-            System.out.print("ENTER SELL PRICE: ");
-            while (!scanner.hasNextDouble()) {
-                System.out.println("THAT'S NOT A VALID NUMBER");
-                scanner.next();
-            }
-            sellPrice = scanner.nextDouble();
-        } while (sellPrice <= 0);
+        System.out.print("ENTER SELL PRICE: ");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("THAT'S NOT A VALID NUMBER");
+            scanner.next();
+            return validateSellPrice();
+        }
+        double sellPrice = scanner.nextDouble();
+        if (sellPrice <= 0) {
+            System.out.println("SELL PRICE MUST BE GREATER THAN 0");
+            return validateSellPrice();
+        }
         return sellPrice;
     }
 
@@ -83,7 +85,7 @@ public class Products {
         boolean firstAttempt = true;
         while (size == null) {
             if (firstAttempt) {
-                System.out.print("SIZE: XL FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL: ");
+                System.out.print("SIZE: X FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL: ");
                 firstAttempt = false;
             }
             String sizeInput = scanner.nextLine().toUpperCase();
@@ -92,23 +94,25 @@ public class Products {
                     size = Sizes.fromCode(sizeInput.charAt(0));
                 }
             } catch (IllegalArgumentException e) {
-                System.out.println("INVALID SIZE. Size: XL FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL:");
-                System.out.print("SIZE: XL FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL: ");
+                System.out.println("INVALID SIZE. Size: X FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL:");
+                System.out.print("SIZE: X FOR X-LARGE, L FOR LARGE, M FOR MEDIUM, S FOR SMALL: ");
             }
         }
         return size;
     }
 
     public int getSku() {
-        int sku;
-        do {
-            System.out.print("ENTER SKU NUMBER (4 digits): ");
-            while (!scanner.hasNextInt()) {
-                System.out.println("THAT'S NOT A VALID NUMBER");
-                scanner.next();
-            }
-            sku = scanner.nextInt();
-        } while (String.valueOf(sku).length() != 4);
+        System.out.print("ENTER SKU NUMBER (4 digits): ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("THAT'S NOT A VALID NUMBER");
+            scanner.next();
+            return getSku();
+        }
+        int sku = scanner.nextInt();
+        if (String.valueOf(sku).length() != 4) {
+            System.out.println("SKU NUMBER MUST BE 4 DIGITS");
+            return getSku();
+        }
         return sku;
     }
 
