@@ -1,12 +1,12 @@
-package VELEZ_POS_EDA.modules;
+package VELEZ_POS.modules;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import VELEZ_POS_EDA.utils.InputUtils;
-import VELEZ_POS_EDA.enums.Colors;
-import VELEZ_POS_EDA.enums.Genders;
-import VELEZ_POS_EDA.enums.Sizes;
+import VELEZ_POS.utils.InputUtils;
+import VELEZ_POS.enums.Colors;
+import VELEZ_POS.enums.Genders;
+import VELEZ_POS.enums.Sizes;
 
 public class Products {
     private Scanner scanner;

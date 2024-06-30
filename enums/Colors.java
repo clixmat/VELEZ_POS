@@ -1,4 +1,4 @@
-package VELEZ_POS_EDA.enums;
+package VELEZ_POS.enums;
 
 public enum Colors {
     RED('R', "RED"),

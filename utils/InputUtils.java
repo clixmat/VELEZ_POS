@@ -1,4 +1,4 @@
-package VELEZ_POS_EDA.utils;
+package VELEZ_POS.utils;
 
 import java.util.Scanner;
 

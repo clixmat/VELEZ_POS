@@ -1,7 +1,7 @@
-package VELEZ_POS_EDA.modules;
+package VELEZ_POS.modules;
 
-import VELEZ_POS_EDA.enums.Roles;
-import VELEZ_POS_EDA.utils.InputUtils;
+import VELEZ_POS.enums.Roles;
+import VELEZ_POS.utils.InputUtils;
 
 import java.util.LinkedList;
 import java.util.Scanner;

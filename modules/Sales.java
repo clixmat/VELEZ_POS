@@ -1,4 +1,4 @@
-package VELEZ_POS_EDA.modules;
+package VELEZ_POS.modules;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -37,14 +37,6 @@ public class Sales {
         return product;
     }
 
-    public double getSubTotal() {
-        return subTotal;
-    }
-
-    public double getTax() {
-        return tax;
-    }
-
     public double getTotal() {
         return total;
     }
@@ -55,10 +47,6 @@ public class Sales {
 
     public Users getSeller() {
         return seller;
-    }
-
-    public Sales() {
-        sales = new LinkedList<>();
     }
 
     public static LinkedList<Sales> getSales() {
@@ -92,7 +80,7 @@ public class Sales {
         System.out.println("----------------------------");
         System.out.println("1. LIST OF SALES");
         System.out.println("2. CREATE NEW SALE");
-        System.out.println("3. EXIT");
+        System.out.println("0. EXIT");
         System.out.println("----------------------------");
         System.out.print("ENTER YOUR CHOICE: ");
     }
@@ -109,14 +97,6 @@ public class Sales {
                 System.out.println((i + 1) + ". " + salesList.get(i));
             }
         }
-    }
-
-    public LinkedList<Sales> getSalesBySeller(int documentNumber) {
-        LinkedList<Sales> salesBySeller = new LinkedList<>();
-        for (Sales sale : sales) {
-            if (sale.seller.getDocumentNumber() == documentNumber) salesBySeller.add(sale);
-        }
-        return salesBySeller;
     }
 
     public void handleSaleCreation() {

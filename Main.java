@@ -1,13 +1,12 @@
-package VELEZ_POS_EDA;
+package VELEZ_POS;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
-import VELEZ_POS_EDA.modules.Reports;
-import VELEZ_POS_EDA.modules.Users;
-import VELEZ_POS_EDA.modules.Products;
-import VELEZ_POS_EDA.modules.Sales;
-import VELEZ_POS_EDA.enums.Roles;
+import VELEZ_POS.modules.Reports;
+import VELEZ_POS.modules.Users;
+import VELEZ_POS.modules.Products;
+import VELEZ_POS.modules.Sales;
+import VELEZ_POS.enums.Roles;
 
 
 public class Main {

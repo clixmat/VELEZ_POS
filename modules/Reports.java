@@ -1,4 +1,4 @@
-package VELEZ_POS_EDA.modules;
+package VELEZ_POS.modules;
 
 import java.util.ArrayList;
 import java.util.List;
